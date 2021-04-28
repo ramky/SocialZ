@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 		root to: 'welcome#index'
 	end
 
+	get 'wait', to: 'wait#index'
+
 	authenticated do 
 		root to: 'posts#index'
 	end
