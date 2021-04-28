@@ -1,0 +1,24 @@
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Hi <%=current_user.email.split(/@/)[0].capitalize%>, welcome to SocialZ!</h1>
+      <p class="postInfAll lead text-muted">currently there are <%= pluralize(Post.all.count, "post")%> from <%= pluralize(User.all.count, "user")%></p>
+      <p>
+        <%= link_to 'Add a new Post', new_post_path, :class => "btn btn-primary my-2" %>
+      </p>
+    </div>
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <%if Post.count == 0%>
+      <p class="lead text-muted text-center">Nothing has been uploaded yet.</p>
+      <%end%>
+      <div id="my-posts">
+        <%= render @posts %>
+      </div>
+    </div>
+  </div>
+</main>
+<br>
+
+
