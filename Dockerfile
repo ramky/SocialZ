@@ -25,6 +25,7 @@ RUN curl -sL https://deb.nodesource.com/setup_${NODE_MAJOR_VERSION}.x | bash - \
   libxslt-dev \
   nodejs \
   openssh-client \
+  postgresql-client \
   unzip \
   zlib1g-dev \
   && rm -rf /var/lib/apt/lists/* \
