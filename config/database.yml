@@ -14,6 +14,7 @@ test:
 
 production:
   <<: *default
-  database: db
+  host: db
+  database: SocialZ_development
   username: postgres
   password: <%= ENV['SOCIALZ_DATABASE_PASSWORD'] %>
