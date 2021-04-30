@@ -64,7 +64,7 @@ EXPOSE 3000
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
-CMD [ "bin/rails", "s", "-u", "Puma", "-b", "0.0.0.0", "-p", "3000" ]
+CMD [ "bin/rails", "s", "-b", "0.0.0.0", "-p", "3000" ]
 
 FROM base as production
 
