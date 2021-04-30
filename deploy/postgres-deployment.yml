@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  labels:
+    app: socialz-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: postgres-pod
+      app: socialz-app
+  template:
+    metadata:
+      name: postgres-pod
+      labels:
+        name: postgres-pod
+        app: socialz-app
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:9.4
+          resources:
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+          ports:
+            - containerPort: 5432

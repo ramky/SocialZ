@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: socialz-app-deployment
+  labels:
+    app: socialz-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: socialz-app-pod
+      app: socialz-app
+  template:
+    metadata:
+      name: socialz-app-pod
+      labels:
+        name: socialz-app-pod
+        app: socialz-app
+    spec:
+      containers:
+        - name: socialz-app
+          image: ramky/socialz
+      resources:
