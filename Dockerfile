@@ -61,12 +61,15 @@ COPY . .
 ARG RAILS_ENV=production
 ENV RAILS_ENV ${RAILS_ENV}
 
-EXPOSE 3000
+# EXPOSE 3000
 
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+# ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
-CMD [ "bin/rails", "s", "-b", "0.0.0.0", "-p", "3000" ]
+# CMD [ "bin/rails", "s", "-b", "0.0.0.0", "-p", "3000" ]
 
-FROM base as production
+# FROM base as production
 
-RUN bundle exec rake assets:precompile
+# RUN bundle exec rake assets:precompile
+
+# Start the application server
+ENTRYPOINT ['./entrypoint.sh']
