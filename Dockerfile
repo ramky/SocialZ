@@ -72,4 +72,4 @@ ENV RAILS_ENV ${RAILS_ENV}
 # RUN bundle exec rake assets:precompile
 
 # Start the application server
-ENTRYPOINT ['./entrypoint.sh']
+ENTRYPOINT ./entrypoint.sh
