@@ -20,4 +20,11 @@ spec:
       containers:
         - name: socialz-app
           image: ramky/socialz
-      resources:
+          resources:
+            requests:
+              cpu: 64m
+              memory: 128Mi
+            limits:
+              cpu: 128m
+              memory: 256Mi
+
